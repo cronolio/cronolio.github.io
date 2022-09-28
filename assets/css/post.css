@@ -1,0 +1,16 @@
+.posts a {
+  color: #555;
+  text-decoration: none;
+  font: 14pt Verdana, sans-serif;
+  font-weight: bold
+}
+/*смена стилей при на ведении курсора*/
+.posts a:hover {
+  text-decoration: underline;
+  color: #999999
+}
+
+.posts li {
+  list-style-type: none;
+  font: 13pt Verdana, sans-serif;
+}
