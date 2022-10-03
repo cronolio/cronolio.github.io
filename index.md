@@ -1,5 +1,17 @@
 ---
 layout: default
-title: Home
+title: Главная
 ---
-<div align="center"><h2>Склоро!</h2>
+
+<div class="posts">
+
+<h4>Последние</h4>
+<p></p>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      {{ post.date | date: "%Y/%m/%d" }} - <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.descr }}
+    </li>
+  {% endfor %}
+</ul>
+</div>
