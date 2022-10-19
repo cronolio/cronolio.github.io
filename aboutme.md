@@ -2,6 +2,10 @@
 layout: default
 title: Обо мне
 ---
-<div align="center">
+<div class="posts">
+<ul>
+  <li>
 Привет. Меня зовут Алексей (aka cronolio)
+  </li>
+</ul>
 </div>
