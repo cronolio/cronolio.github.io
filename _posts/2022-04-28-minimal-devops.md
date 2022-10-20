@@ -1,7 +1,7 @@
 ---
 layout: default
 title: devops на минималках - часть 1
-descr: формируем инфрастуктура при помощи terraform на примере libvirt
+descr: terraform на примере libvirt
 ---
 
 Предположим уже есть настроенный некий хост с libvirt и 2мя сетевка. Первая смотрит в интернет,
