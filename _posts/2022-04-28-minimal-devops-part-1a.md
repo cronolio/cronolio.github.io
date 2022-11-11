@@ -4,8 +4,8 @@ title: devops на минималках - часть 1
 descr: terraform на примере libvirt
 ---
 
-Предположим уже есть настроенный некий хост с libvirt и 2мя сетевка. Первая смотрит в интернет,
-вторая в локальную сеть. На внутреннем интерфейсе статичный ип-адрес `10.0.0.1`.
+Предположим уже есть настроенный некий хост с libvirt и 2мя сетевка. Первая br0 смотрит в интернет,
+вторая br1 в локальную сеть. На внутреннем интерфейсе статичный ип-адрес `10.0.0.1`.
 
 По [мануалке](https://github.com/dmacvicar/terraform-provider-libvirt/blob/main/README.md)
 создадим файлик `main.tf` и напишем в него так:
@@ -33,7 +33,7 @@ provider "libvirt" {
 Для сетевых интерфейсов:
 ```
 virsh net-info br0;
-
+virsh net-info br1;
 ```
 Для пулов:
 ```
@@ -50,7 +50,6 @@ resource "libvirt_network" "br1" {
 ```
 И для ресурсов дискового пространства `libvirt_pool.tf`:
 ```
-# libvirt_pool.default:
 resource "libvirt_pool" "default" {
 }
 ```
