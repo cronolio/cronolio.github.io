@@ -1,7 +1,10 @@
 ---
 layout: post
+sitemap:
+  lastmod: 2022-11-12
 title: devops на минималках - часть 1
 descr: terraform на примере libvirt
+
 ---
 
 Предположим уже есть настроенный некий хост с libvirt и 2мя сетевка. Первая br0 смотрит в интернет,

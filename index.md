@@ -1,5 +1,7 @@
 ---
 layout: default
+sitemap:
+  lastmod: 2022-11-12
 title: Главная
 ---
 
