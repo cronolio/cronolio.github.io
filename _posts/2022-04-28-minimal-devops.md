@@ -7,8 +7,8 @@ descr: terraform на примере libvirt
 Предположим уже есть настроенный некий хост с libvirt и 2мя сетевка. Первая смотрит в интернет,
 вторая в локальную сеть. На внутреннем интерфейсе статичный ип-адрес `10.0.0.1`.
 
-По [мануалке](https://github.com/dmacvicar/terraform-provider-libvirt/blob/main/README.md#getting-started) создадим файлик `main.tf`
-и напишем в него так:
+По [мануалке](https://github.com/dmacvicar/terraform-provider-libvirt/blob/main/README.md)
+создадим файлик `main.tf` и напишем в него так:
 
 ```
 terraform {
@@ -29,4 +29,35 @@ provider "libvirt" {
 [зеркало](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart#configure-provider)
 в `~/.terraformrc`. 
 
-Далее нужно узнать `id` сетевых интерфейсов и хранилищь в libvirt.
+Далее нужно узнать `id` сетевых интерфейсов и хранилищь в libvirt. Пусть нам libvirt об этом расскажет.
+Для сетевых интерфейсов:
+```
+virsh net-info br0;
+
+```
+Для пулов:
+```
+virsh pool-info default
+```
+Нужно запомнить строки `Name` и `UUID`.
+
+Далее создадим файлик сетевых ресурсов `libvirt_network.tf` с содержимым:
+```
+resource "libvirt_network" "br0" {
+}
+resource "libvirt_network" "br1" {
+}
+```
+И для ресурсов дискового пространства `libvirt_pool.tf`:
+```
+# libvirt_pool.default:
+resource "libvirt_pool" "default" {
+}
+```
+
+Теперь можно импортировать ресурсы. UUID берем из предыдущих virsh-команд:
+```
+terraform impor libvirt_network.br0 <UUID>
+terraform impor libvirt_network.br1 <UUID>
+terraform impor libvirt_pool.default <UUID>
+```
