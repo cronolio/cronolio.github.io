@@ -1,6 +1,7 @@
 body{
-background-color: #FCF5EE;
+background-color: #fcf5ee;
 margin: 10px;
+font: 13pt Verdana, sans-serif;
 }
 
 p {
@@ -8,12 +9,13 @@ text-indent: 20px; /* Отступ абзатцев */
 }
   
 #boxmenu {
-BACKGROUND: #f6f6f6;
-BORDER: 1px #ccc solid;
-POSITION: relative;
-PADDING: 7px;
+background: #f6f6f6;
+border: 1px #ccc solid;
+border-radius: 5px;
+position: relative;
+padding: 7px;
 /* LEFT: 18%; */
-Z-INDEX: 1/*для IE*/
+z-index: 1/*для IE*/
 }
 
 /*без этого нарушается работа меню*/
@@ -23,13 +25,12 @@ BORDER-COLLAPSE: collapse
 
 /*стили основного меню*/
 #m {
-FONT: 13pt Verdana, sans-serif;
 FONT-WEIGHT: bold
 }
 
 /*стиль ссылок основного меню*/
 .a {
-COLOR: #666;
+color: #666;
 TEXT-DECORATION: none
 }
 

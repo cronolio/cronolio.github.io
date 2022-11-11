@@ -1,5 +1,5 @@
 .posts a {
-  color: #555;
+  color: #333;
   text-decoration: none;
   font: 14pt Verdana, sans-serif;
   font-weight: bold
@@ -13,4 +13,11 @@
 .posts li {
   list-style-type: none;
   font: 13pt Verdana, sans-serif;
+}
+
+.highlight pre {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 7px;
+  background: #f6f6f6
 }

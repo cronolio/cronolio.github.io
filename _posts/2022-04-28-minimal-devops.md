@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: devops на минималках - часть 1
 descr: terraform на примере libvirt
 ---
