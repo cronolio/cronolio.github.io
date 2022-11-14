@@ -1,8 +1,8 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2022-11-12
-title: devops на минималках - часть 1
+  lastmod: 2022-11-14
+title: devops на минималках - terraform на примере libvirt
 descr: terraform на примере libvirt
 
 ---
@@ -63,3 +63,15 @@ terraform impor libvirt_network.br0 <UUID>
 terraform impor libvirt_network.br1 <UUID>
 terraform impor libvirt_pool.default <UUID>
 ```
+
+Чтож, теперь существующие ресурсы libvirt имортированы в статус terraform. Теперь нужно занести их конфигурационные файлы.
+Команда `terraform state list` покажет существующие в terraform ресурсы.
+Команда `terraform state show libvirt_network.br0` покажет содержимое ресурса.
+Перенести можно примерно такой командой:
+```
+terraform state show libvirt_network.br0 | sed 's/id/#id/' > libvirt_network.tf
+terraform state show libvirt_network.br1 | sed 's/id/#id/' >> libvirt_network.tf
+```
+id комментируется, так как оно не может хранится в конфиг файле.
+Аналгично перенесем pool `terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf`.
+Ура. Ресурсы в конфиг файлах. Настало время объявить свои ресурсы, создать виртуальные машины в libvirt при помощи terraform.
