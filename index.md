@@ -3,6 +3,8 @@ layout: default
 sitemap:
   lastmod: 2022-11-12
 title: Главная
+descr: бложик cronolio о девопстве
+keywords: devops
 ---
 
 <div class="posts">

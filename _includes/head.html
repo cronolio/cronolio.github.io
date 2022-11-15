@@ -3,7 +3,9 @@
     <meta name="google-site-verification" content="kEasN38PUn-MGj4n66mDcPTVn5ZWMeM6i1-fjb81IQg" />
     <meta name="yandex-verification" content="4288ad3253fe833b" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/post.css"/>
+    <title>{{ page.title }}</title>
+    {% if page.descr %}<meta name="description" content="{{ page.descr }}">{% endif %}
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
     <!-- head end -->
