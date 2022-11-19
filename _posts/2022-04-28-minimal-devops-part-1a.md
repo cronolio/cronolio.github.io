@@ -52,6 +52,7 @@ resource "libvirt_network" "br0" {
 resource "libvirt_network" "br1" {
 }
 ```
+
 И для ресурсов дискового пространства `libvirt_pool.tf`:
 ```
 resource "libvirt_pool" "default" {
@@ -60,9 +61,9 @@ resource "libvirt_pool" "default" {
 
 Теперь можно импортировать ресурсы. UUID берем из предыдущих virsh-команд:
 ```
-terraform impor libvirt_network.br0 <UUID>
-terraform impor libvirt_network.br1 <UUID>
-terraform impor libvirt_pool.default <UUID>
+terraform import libvirt_network.br0 <UUID>
+terraform import libvirt_network.br1 <UUID>
+terraform import libvirt_pool.default <UUID>
 ```
 
 Чтож, теперь существующие ресурсы libvirt импортированы в статус terraform.
@@ -74,8 +75,12 @@ terraform impor libvirt_pool.default <UUID>
 terraform state show libvirt_network.br0 | sed 's/id/#id/' > libvirt_network.tf
 terraform state show libvirt_network.br1 | sed 's/id/#id/' >> libvirt_network.tf
 ```
-id комментируется, так как оно не может хранится в конфиг файле.
-Аналгично перенесем pool `terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf`.
 
-Ура. Ресурсы в конфиг файлах.
+id комментируется, так как оно не может хранится в конфиг файле.
+Аналгично перенесем pool: 
+```
+terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf
+```
+
+Ура. Ресурсы в конфиг-файлах.
 Настало время объявить свои ресурсы, создать виртуальные машины в libvirt при помощи terraform.
