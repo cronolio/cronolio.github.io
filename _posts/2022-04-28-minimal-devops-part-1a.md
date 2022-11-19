@@ -76,7 +76,7 @@ terraform state show libvirt_network.br0 | sed 's/id/#id/' > libvirt_network.tf
 terraform state show libvirt_network.br1 | sed 's/id/#id/' >> libvirt_network.tf
 ```
 
-id комментируется, так как оно не может хранится в конфиг файле.
+id комментируется, так как оно не может хранится в конфиг-файле.
 Аналгично перенесем pool: 
 ```
 terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf
