@@ -1,11 +1,13 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2022-11-19
+  lastmod: 2022-11-22
 title: devops на минималках - terraform на примере libvirt
 descr: terraform на примере libvirt
 keywords: terraform, libvirt
 ---
+
+#### Базовые настройки terraform
 
 Предположим уже есть некий настроенный хост с libvirt и 2мя сетевыми интерфейсами.
 Первая br0 смотрит в интернет, вторая br1 в локальную сеть.
@@ -31,7 +33,9 @@ provider "libvirt" {
 
 Если во время `terraform init` будет "подвисать", то можно настроить 
 [зеркало](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart#configure-provider)
-в `~/.terraformrc`. 
+в `~/.terraformrc`.
+
+#### Импорт имеющейся инфрастуктуры из libvirt
 
 Далее нужно узнать `id` сетевых интерфейсов и хранилищь в libvirt. Пусть нам libvirt об этом расскажет.
 Для сетевых интерфейсов:
@@ -84,3 +88,34 @@ terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf
 
 Ура. Ресурсы в конфиг-файлах.
 Настало время объявить свои ресурсы, создать виртуальные машины в libvirt при помощи terraform.
+
+###### Если хочется удалить ипортированные ресурсы из terraform
+То достаточно посмотреть список при помощи: 
+```
+terraform state list
+libvirt_network.br0
+libvirt_network.br1
+libvirt_pool.default
+``` 
+
+и удалить ненужный
+```
+terraform state rm <name>
+```
+
+и затем удалить/переименовать/закоментировать соответсвующие файлы. Эта команда удалит именно из terraform.
+
+#### Объявление своих ресурсов в terraform
+Далее берется некий `cloud`-образ, образ диска с уже установленным дистрибутивом.
+Запишем в файлик `upstream_debian_volume.tf` такое:
+```
+resource "libvirt_volume" "debian-11-upstream" {
+  name = "debian-11-upstream.qcow2"
+  pool = "default"
+  source = "https://cloud.debian.org/images/cloud/bullseye/20221020-1174/debian-11-genericcloud-amd64-20221020-1174.qcow2"
+  format = "qcow2"
+}
+```
+
+Тут лучше использовать конкретный образ нежели чем `latest`. Со временем можно обнолять по необходимости.
+`terraform apply` выкачает образ.
