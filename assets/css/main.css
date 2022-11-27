@@ -1,13 +1,13 @@
 body{
 background-color: #fcf5ee;
-margin: 10px;
+margin: 15px;
 font: 13pt Verdana, sans-serif;
 }
 
 p {
-text-indent: 20px; /* Отступ абзатцев */
+text-indent: 15px; /* Отступ абзатцев */
 }
-  
+
 #boxmenu {
 background: #f6f6f6;
 border: 1px #ccc solid;
@@ -15,117 +15,117 @@ border-radius: 5px;
 position: relative;
 padding: 7px;
 /* LEFT: 18%; */
-z-index: 1/*для IE*/
+z-index: 1; /*для IE*/
 }
 
 /*без этого нарушается работа меню*/
 #m * {
-BORDER-COLLAPSE: collapse
+border-collapse: collapse;
 }
 
 /*стили основного меню*/
 #m {
-FONT-WEIGHT: bold
+font-weight: bold;
 }
 
 /*стиль ссылок основного меню*/
 .a {
 color: #666;
-TEXT-DECORATION: none
+text-decoration: none;
 }
 
 /*стили выпадающего меню для IE*/
 * HTML #m .a table {
-FONT: 12pt Verdana, sans-serif;
-DISPLAY: block
+font: 12pt Verdana, sans-serif;
+display: block;
 }
 
 /*стили выпадающего меню*/
 .a table {
-FONT: 12pt Verdana, sans-serif;
-DISPLAY: block
+font: 12pt Verdana, sans-serif;
+display: block;
 }
 
 /*скрывает выпадающие меню*/
 #m table {
-DISPLAY: none
+display: none;
 }
 #m table A {
-DISPLAY: none
+display: none;
 }
 
 /*смена стилей при на ведении курсора*/
 #m .a:hover {
-TEXT-DECORATION: underline;
-COLOR: #999999
+text-decoration: underline;
+color: #999999;
 }
 
 .menu:hover {
-COLOR: #666;
-BORDER: #666 0px solid/*для OP*/
+color: #666;
+border: #666 0px solid; /*для OP*/
 }
 
 /*стили выпадающего меню при на ведении курсора*/
 #m .a:hover table {
-BACKGROUND: #f6f6f6;
-BORDER: #ccc 1px solid;
-POSITION: absolute;
-DISPLAY: block;
-WHITE-SPACE: nowrap
+background: #f6f6f6;
+border: #ccc 1px solid;
+position: absolute;
+display: block;
+white-space: nowrap
 }
 
 .menu:hover table {
-BACKGROUND: #f6f6f6;
-BORDER: #ccc 1px solid;
-POSITION: absolute;
-DISPLAY: block;
-WHITE-SPACE: nowrap
+background: #f6f6f6;
+border: #ccc 1px solid;
+position: absolute;
+display: block;
+white-space: nowrap
 }
 
-#m .a:hover table A {
-COLOR: #666;
-TEXT-DECORATION: none;
-BORDER-RIGHT: #666666 1px solid; /*дрожание по горизантали*/
+#m .a:hover table a {
+color: #666;
+text-decoration: none;
+border-right: #666666 1px solid; /*дрожание по горизантали*/
 PADDING: 1px 12px; /*отступы выпад меню*/
-DISPLAY: block;
-WHITE-SPACE: nowrap
+display: block;
+white-space: nowrap
 }
 
-#m .menu:hover table A {
-COLOR: #666;
-TEXT-DECORATION: none;
-BORDER-RIGHT: #cccccc 1px solid;
-PADDING: 1px 12px; /*отступы в подменю выпад. меню*/
-DISPLAY: block;
-WHITE-SPACE: nowrap
+#m .menu:hover table a {
+color: #666;
+text-decoration: none;
+border-right: #cccccc 1px solid;
+padding: 1px 12px; /*отступы в подменю выпад. меню*/
+display: block;
+white-space: nowrap
 }
 
 /*стиль ссылок вып. меню при наведении курсора*/
-#m .a:hover table A:hover {
-BACKGROUND: #fff;
-COLOR: #666;
-TEXT-DECORATION: none;
-BORDER: #999 1px solid;/*дрожание по вертикали*/
-PADDING-RIGHT: 12px;
-PADDING-TOP: 0px;
-PADDING-LEFT: 11px;
-PADDING-BOTTOM: 0px;
-DISPLAY: block
+#m .a:hover table a:hover {
+background: #fff;
+color: #666;
+text-decoration: none;
+border: #999 1px solid;/*дрожание по вертикали*/
+padding-right: 12px;
+padding-top: 0px;
+padding-left: 11px;
+padding-bottom: 0px;
+display: block
 }
 
-#m .menu:hover table A:hover {
-BACKGROUND: #fff;
-COLOR: #666;
-TEXT-DECORATION: none;
-BORDER: #999 1px solid;
-PADDING-RIGHT: 12px;
+#m .menu:hover table a:hover {
+background: #fff;
+color: #666;
+text-decoration: none;
+border: #999 1px solid;
+padding-right: 12px;
 padding-top: 0px;
-PADDING-LEFT: 11px;
-PADDING-BOTTOM: 0px;
-DISPLAY: block
+padding-left: 11px;
+padding-bottom: 0px;
+display: block
 }
 
 .menu {
-MARGIN: 0 10px;
-FLOAT: left;
+margin: 0 10px;
+float: left;
 }
