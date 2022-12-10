@@ -9,12 +9,12 @@ keywords: devops
 
 <div class="posts">
 
-<h4>Последние</h4>
+<h4 style="font-weight:normal;">Последнее из блога</h4>
 <p></p>
 <ul>
-  {% for post in site.posts %}
+  {% for page in site.minimal_devops %}
     <li>
-      {{ post.date | date: "%Y/%m/%d" }} - <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.descr }}
+      <a href="{{ page.url }}">{{ page.title }}</a> - {{ page.descr }}
     </li>
   {% endfor %}
 </ul>

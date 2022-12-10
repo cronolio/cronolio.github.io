@@ -4,10 +4,10 @@ sitemap:
   exclude: 'yes'
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{% for post in site.posts %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{% for page in site.minimal_devops %}
     <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
     </url>{% endfor %}{% for page in site.html_pages %}{% unless page.sitemap.exclude == "yes" %}
     <url>
       <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>

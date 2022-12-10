@@ -1,0 +1,4 @@
+collections:
+  minimal_devops :
+    output       : true
+    permalink    : /blog/:collection/:path
