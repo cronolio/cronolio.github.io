@@ -12,7 +12,7 @@ keywords: devops
 <h4 style="font-weight:normal;">Последнее из блога</h4>
 <p></p>
 <ul>
-  {% for page in site.minimal_devops %}
+  {% for page in site.minimal-devops %}
     <li>
       <a href="{{ page.url }}">{{ page.title }}</a> - {{ page.descr }}
     </li>
