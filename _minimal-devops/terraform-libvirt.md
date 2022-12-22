@@ -1,7 +1,7 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2022-12-12
+  lastmod: 2022-12-23
 title: devops на минималках - terraform на примере libvirt
 descr: terraform на примере libvirt
 keywords: terraform, libvirt
@@ -37,7 +37,7 @@ provider "libvirt" {
 
 #### Импорт имеющейся инфрастуктуры из libvirt
 
-Далее нужно узнать `id` сетевых интерфейсов и хранилищь в libvirt. Пусть нам libvirt об этом расскажет.
+Далее нужно узнать `id` сетевых интерфейсов и хранилищ в libvirt. Пусть нам libvirt об этом расскажет.
 Для сетевых интерфейсов:
 ```
 virsh net-info br0;
@@ -89,7 +89,7 @@ terraform state show libvirt_pool.default | sed 's/id/#id/' > libvirt_pool.tf
 Ура. Ресурсы в конфиг-файлах.
 Настало время объявить свои ресурсы, создать виртуальные машины в libvirt при помощи terraform.
 
-###### Если хочется удалить ипортированные ресурсы из terraform
+###### Если хочется удалить импортированные ресурсы из terraform
 То достаточно посмотреть список при помощи: 
 ```
 terraform state list
