@@ -1,7 +1,7 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-01-02
+  lastmod: 2023-01-25
 title: devops на минималках - docker swarm - caddy
 descr: caddy - мощная, расширяемая платформа для обслуживания запросов к вашему сайту.
 keywords: docker swarm, caddy
@@ -38,7 +38,7 @@ CMD ["docker-proxy"]
 ```
 
 Первая интресность тут 
-[`ARG` до `FROM`](https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact)
+[ARG до FROM](https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact)
 Простыми словами - переменную можно взять и аргумента к `docker build` и использовать её в `FROM`.
 
 Вторая интерерсность состоит в том, что это сборка в несколько этапов (multi stage build).
@@ -115,4 +115,4 @@ Caddyfile прост:
   auto_https off
 }
 ```
-Ну просто не всегда нужны автоматические сертификаты.
+Просто не всегда нужны автоматические сертификаты.

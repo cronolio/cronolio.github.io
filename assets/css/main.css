@@ -155,10 +155,18 @@ myown
   font: 13pt Verdana, sans-serif;
 }
 
-.highlight pre {
+/* code blocks */
+.language-plaintext div pre {
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 7px;
+  border-radius: 4px;
+  padding: 5px 10px;
   background: #f6f6f6;
   overflow-x: scroll;
 }
+p .language-plaintext  {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0px 5px;
+  background: #f6f6f6;
+}
+
