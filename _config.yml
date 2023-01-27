@@ -2,3 +2,5 @@ collections:
   minimal-devops :
     output       : true
     permalink    : /blog/:collection/:path
+
+url: https://cronolio.ru
