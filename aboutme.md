@@ -10,7 +10,7 @@ desc: информация о cronolio
 <ul>
   <li>
 Привет. Меня зовут Алексей (aka cronolio). Для связи со мной прошу писать в телеграм 
-<a href="https://t.me/cronolio">@cronolio</a>
+<a href="https://t.me/cronolio" rel="nofollow">@cronolio</a>
   </li>
 </ul>
 </div>
