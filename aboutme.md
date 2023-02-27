@@ -2,7 +2,7 @@
 layout: default
 permalink: /aboutme
 sitemap:
-  lastmod: 2022-02-27
+  lastmod: 2023-02-27
 title: Обо мне
 desc: информация о cronolio
 ---
