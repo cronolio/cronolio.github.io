@@ -1,7 +1,7 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-02-01
+  lastmod: 2023-05-05
 title: devops на минималках - docker swarm - caddy
 descr: caddy - мощная, расширяемая платформа для обслуживания запросов к вашему сайту.
 keywords: docker swarm, caddy
@@ -119,10 +119,10 @@ Caddyfile прост:
 
 #### лейблы
 
-Для работы по 80 порту необходимо указать после проксируемого домена `example.com:80`,
+Для работы по 80 порту необходимо указать порт после проксируемого домена `example.com:80`,
 либо указать протокол `http://example.com`. Я больше за порт:
 ```
 labels:
   caddy: example.com:80
-  caddy.reverse_proxy: "{{upstreams 80}}"
+  {% raw %}caddy.reverse_proxy: "{{upstreams 80}}"{% endraw %}
 ```
