@@ -1,7 +1,7 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-05-05
+  lastmod: 2023-06-16
 title: devops на минималках - docker swarm - caddy
 descr: caddy - мощная, расширяемая платформа для обслуживания запросов к вашему сайту.
 keywords: docker swarm, caddy
@@ -60,10 +60,10 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        - caddy_version=2.6.2
-        - docker_proxy_version=v2.8.1
+        - caddy_version=2.6.4
+        - docker_proxy_version=v2.8.4
         - certmagic_s3_version=v1.2.3
-        - coraza_caddy_version=v1.2.1
+        - coraza_caddy_version=v1.2.2
 ```
 
 Тут интересность в том, что версия compose файла `2.4`.
