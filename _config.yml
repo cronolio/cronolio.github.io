@@ -1,6 +1,9 @@
+collections_dir: blog
 collections:
-  minimal-devops :
-    output       : true
-    permalink    : /blog/:collection/:path
-
+  minimal-devops:
+    output: true
+    permalink: /blog/:collection/:path
+  monitoring:
+    output: true
+    permalink: /blog/:collection/:path
 url: https://cronolio.ru
