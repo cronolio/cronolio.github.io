@@ -1,7 +1,7 @@
 ---
 layout: default
 sitemap:
-  lastmod: 2023-01-02
+  lastmod: 2023-08-09
 title: Главная
 descr: бложик cronolio о девопстве
 keywords: devops

@@ -1,17 +1,18 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-07-27
+  lastmod: 2023-08-09
 title: мониторинг - сенсоры windows
-descr: сенсоры windows - температура, скорость вентилятора.
-keywords: sensors, windows
+descr: сенсоры windows - температура, скорость вентилятора. получение метрик в prometheus
+keywords: sensors, windows, prometheus, prom файл
 ---
 
 #### Предистория
 
 В данной статье речь пойдет о получении данных с сеносров в прометеии.
+
 Есть [гуишная версия](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor).
-Но прометей неможет "смотреть" на гуи.
+Но прометей не может "смотреть" на гуи.
 Поэтому люди написали сервис [hardware-supervisor](https://github.com/darkbrain-fc/HardwareSupervisor).
 Использует библиотеку с устройствами из гуишной версии и размещает данные в WMI.
 
