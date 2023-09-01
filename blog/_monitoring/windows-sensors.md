@@ -1,7 +1,7 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-08-09
+  lastmod: 2023-09-01
 title: мониторинг - сенсоры windows
 descr: сенсоры windows - температура, скорость вентилятора. получение метрик в prometheus
 keywords: sensors, windows, prometheus, prom файл
@@ -9,7 +9,7 @@ keywords: sensors, windows, prometheus, prom файл
 
 #### Предистория
 
-В данной статье речь пойдет о получении данных с сеносров в прометеии.
+В данной статье речь пойдет о получении данных с сеносров в прометеи.
 
 Есть [гуишная версия](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor).
 Но прометей не может "смотреть" на гуи.
