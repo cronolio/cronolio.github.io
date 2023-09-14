@@ -1,15 +1,16 @@
 ---
 layout: post
 sitemap:
-  lastmod: 2023-09-01
+  lastmod: 2023-09-14
 title: мониторинг - сенсоры windows
 descr: сенсоры windows - температура, скорость вентилятора. получение метрик в prometheus
 keywords: sensors, windows, prometheus, prom файл
 ---
 
-#### Предистория
+В данной статье речь пойдет о получении данных с сенсоров (температура цпу, дисков, скорость вентиляторов)
+и хранении их в prometheus.
 
-В данной статье речь пойдет о получении данных с сеносров в прометеи.
+#### Предистория
 
 Есть [гуишная версия](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor).
 Но прометей не может "смотреть" на гуи.
@@ -40,7 +41,6 @@ Get-WmiObject -namespace "root/HardwareSupervisor" `
 ```
 Вернёт названия жестких дисков.
 
-
 ```
 Get-WmiObject -namespace "root/HardwareSupervisor" `
 		-Class Sensor -Filter "SensorType = 'Temperature'"
@@ -53,5 +53,6 @@ Get-WmiObject -namespace "root/HardwareSupervisor" `
 ```
 Вернет информацию о вентиляторах. По поводу `Min > 0` - на материнской плате архитектурно
 заложено подключение нескольких вентиялторов, но не все из них подключены или даже распаяны.
-Обычно когда поключен вентилятор, то `Min` становится 10.
+Обычно когда подключен вентилятор, то `Min` становится 10.
 
+Остается только отфильтровать данные и сохранить в `.prom` файл.
