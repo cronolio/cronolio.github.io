@@ -6,4 +6,4 @@ collections:
   monitoring:
     output: true
     permalink: /blog/:collection/:path
-url: https://cronolio.ru
+url: https://cronolio.github.io
