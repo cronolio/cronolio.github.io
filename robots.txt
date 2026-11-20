@@ -1,2 +1,10 @@
+---
+layout: none
+permalink: /robots.txt
+sitemap:
+  exclude: 'yes'
+---
 User-agent: *
 Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
